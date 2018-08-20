@@ -100,7 +100,7 @@ function afficherEgalite(toto){
 }
 
 function afficherJoueurGagne(iaChoice, userChoice){
-    // animation joueur gagne (avance) barre de vie adversaire baisse
+    document.getElementById("progressbarplayer").style.width="66%";
     positionJoueur += 320;
     document.getElementById("GingerBright").style.left = positionJoueur + "px";
 }

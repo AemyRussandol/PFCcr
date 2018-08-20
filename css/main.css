@@ -138,11 +138,20 @@ textarea {
     margin-left: 90%;
 }
 
+#treasure {
+    bottom: 120px;
+}
+
 #rock, #paper, #scissors {
     cursor: pointer;
 }
 
-
+#playingcards {
+    display: inline-block;
+    position: relative;
+    top: -150px;
+    left: 450px;
+}
 
 
 
