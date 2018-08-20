@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!--  GAME PRESENTATION -->
+  <div id="welcome" class="row">
+    <div class="col-12 col-lg-12 mx-auto text-center mt-5">
+      <img src="img/Angel_Cookie_Animated.gif" alt="welcome" style="width: 200px;">
+      <p>Bienvenue sur le chifoumi cookie run !</p>
+      <p>Le principe est simple :</p>
+      <p>- Le but est de faire arriver ton personnage en premier jusqu'au trésor</p>
+      <p>- Choisis une carte</p>
+      <p></p>
+      <button type="button" class="btn btn-light" id="deleteWelcome">Commencer</button>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div class="row" id="bgd">
+    <div id="game" class="col-12 col-lg-12 mx-auto" style="display: none; position: absolute; background-image: url(img/LoadingBgChapter0006.png); background-size: cover; height: 100vh;"></div>
+  </div>
+
+  <!-- NAME ENTER -->
+  <div class="row" id="form" style="display: none">
+    <div class="col-4 col-lg-4"></div>
+    <div class="col-4 col-lg-4" id="nickname">
+      <div class="input-group mt-3" style="display: none;" id="name">
+        <p class="inputNameTitle">Avant de commencer, j'ai besoin de connaître ton pseudo!</p>
+        <input type="text" id="inputName" class="form-control" style="width: 100%" placeholder="Entrez votre pseudo" aria-label="Username">
+        <button type="button" class="btn btn-light" id="enterName">Commencer</button>
+      </div>
+    </div>
+    <div class="col-4 col-lg-4"></div>
+  </div>
+
+  <!-- IA part -->
+
+  <div class="row" id="gamepage">
+
+
+     <!-- TOP PART IA -->
+     <div class="col-sm-1"></div>
+    <div class="col-sm-4 col-md-4" id="iapart" style="display: none; text-align: center">
+      <p class="iaNameText">IA</p>
+      <div class="progress">
+        <div id="progressbaria" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+          aria-valuemax="100" style="width:100%">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+
+
+
+    <!-- PLAYER TOP PART-->
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4 col-md-4" id="playerpart" style="display: none; text-align: center">
+        <p id="playername"></p>
+        <div class="progress">
+          <div id="progressbarplayer" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+            aria-valuemax="100" style="width:100%">
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  
+
+  <!-- PICTURES -->
+<div class="row" id="pictures" style="display: none">
+  <div class="col-sm-12 col-md-12" id="picture" style="display: none">
+
+    <!-- IA PIC -->
+      <div class="IApic">
+          <img id="darkchoco" class="position-relative" src="img/Dark_Choco_Cookie_Animated.gif" alt="Dark choco" style="display: none;">
+          <img id="darkchocolose" src="img/Dark_Choco_Cookie_Exhausted.png" style="display: none" alt="Dark choco vaincu">
+        </div>
+
+
+    <!-- PLAYER PIC-->
+    <div class="playerpic">
+        <img id="GingerBright" class="position-relative" src="img/GingerBright.png" alt="Ginger" style="display: none">
+        <img id="Gingerlose" src="img/GingerBright_Exhausted.png" style="display:  none" alt="Ginger à perdu"> 
+      </div>
+
+    <!-- TREASURE PIC -->
+ <div class="treasurepic">
+  <img id="treasure" class="position-relative" src="img/Golden_Trophy_Chest.png" alt="GoldenTrophy" style="display: none">
+</div>
+
+  </div>
+</div>
+
+<!-- CARDS -->
+
+<div class="row" id="playingcards" style="display: none">
+  <div class="col-md-12">
+      <span>
+          <img src="img/rock.png" alt="Rock" id="rock">
+      </span>
+      <span>
+         <img src="img/papier.png" alt="paper" id="paper">
+      </span>
+      <span>
+          <img src="img/ciseaux.png" alt="scissors" id="scissors">
+      </span>
+  </div>
+</div>
+
+
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pfc.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+  </script>
+  <script src="js/pfc.js"></script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</body>
+
+</html>
