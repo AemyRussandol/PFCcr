@@ -100,6 +100,10 @@ textarea {
     margin: 0;
 }
 
+#welcome {
+    background-color: rgb(0, 175, 113, 0.5);
+    height: 100vh;
+}
 
 #nickname {
     margin-top: 250px;
@@ -159,14 +163,13 @@ textarea {
 }
 
 #won {
-    position: relative;
-    top: 150px;
-    left: 500px;
+    position: absolute;
+    margin-top: 20%;
+    left: 550px;
 }
 
 #lost {
     position: absolute;
-    text-align: center;
     margin-top: 10%;
     left: 500px;
 }
@@ -177,7 +180,7 @@ textarea {
 }
 
 #restart {
-    position: relative;
+    position: absolute;
     top: 250px;
     left: 320px;
 }
