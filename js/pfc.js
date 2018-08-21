@@ -28,6 +28,10 @@ document.getElementById("scissors").onclick = function() {
     jouer("ciseaux")
 };
 
+document.getElementById("restart").onclick = function() {
+    
+}
+
 // card1.onClick(jouer('feuille'))
 
 // func jouer(choix)
@@ -63,15 +67,24 @@ function playingPage() {
 }
 
 document.getElementById("enterName").onclick = function() {
-    name()
-    playingPage()
+    var nomJoueur = document.getElementById("inputName").value;
+
+    if (nomJoueur !== '') {
+        document.getElementById("inputNameError").style.display = "none";
+        document.getElementById("playername").innerHTML = nomJoueur;
+        playingPage()
+    }
+    else {
+        document.getElementById("inputNameError").style.display = "block";
+    }
+    
 }
 
 // fonction qui verifie une fois cliqué sur le bouton enterName que si le inputName.innerHTML est vide alors msg d'erreur dans un p.
 
 function name(){
   var x = document.getElementById("inputName").value;
- 
+  document.getElementById("playername").innerHTML = x;
 } 
 
 function winaction(iaChoice, userChoice) {
@@ -100,38 +113,72 @@ function afficherEgalite(toto){
 }
 
 function afficherJoueurGagne(iaChoice, userChoice){
-    document.getElementById("progressbarplayer").style.width="66%";
-    positionJoueur += 320;
+
+    var valeurProgress = 100 - (scoreJoueur * (100 / 3))
+    document.getElementById("progressbaria").style.width=valeurProgress + '%';
+
+    positionJoueur += 325;
+
     document.getElementById("GingerBright").style.left = positionJoueur + "px";
 }
-
+ 
 function afficherIaGagne(iaChoice, userChoice){
-    // animation Ia gagne(avance) barre de vie adversaire baisse
-    positionIa += 320;
+    
+    // animation Ia gagne(avance) barre de vie adversaire baisse 
+    // et un MSG s'affiche durant quelques secondes.
+
+    var valeurProgress = 100 - (scoreIA * (100 / 3))
+    document.getElementById("progressbarplayer").style.width=valeurProgress + '%';
+
+    positionIa += 325;
+
     document.getElementById("darkchoco").style.left = positionIa + "px";
 }
 
 function afficherPartieFinie(){
-    // animation partie finie (coupe)
-    console.log("partie finie");
+    document.getElementById("gamepage").style.display = "none";
+    document.getElementById("form").style.display = "none";
+    document.getElementById("playerpart").style.display = "none";
+    document.getElementById("iapart").style.display = "none";
+    document.getElementById("darkchoco").style.display = "none";
+    document.getElementById("GingerBright").style.display = "none";
+    document.getElementById("treasure").style.display = "none";
+    document.getElementById("playingcards").style.display = "none"
+    document.getElementById("pictures").style.display = "none";
+    document.getElementById("picture").style.display = "none";
+    document.getElementById("restart").style.display = "inline-block";
+
+    if (scoreJoueur == 3) {
+        document.getElementById("won").style.display = "inline-block";
+    }
+    else {
+        document.getElementById("lost").style.display = "inline-block";
+    }
+
 }
 
 function jouer(choix) {
     var iaChoice = generateRandomChoice(["pierre", "ciseaux", "feuille"]);
-console.log("userchoice " + choix);
-console.log("iachoice" + iaChoice);
+
+    console.log('== Jouer ==');
+    console.log("choix joueur :  " + choix);
+    console.log("choix IA : " + iaChoice);
+
     if (choix == iaChoice){
         afficherEgalite(choix);
+        console.log('Egalité');
     }
 
     else {
         if (winaction(iaChoice, choix) == true){
             scoreJoueur++;
             afficherJoueurGagne(iaChoice, choix);
+            console.log('Le joueur gagne');
         }
         else {
             scoreIA++;
             afficherIaGagne(iaChoice, choix);
+            console.log("L'IA gagne");
         }
     }
     if (scoreJoueur === 3 || scoreIA === 3) {
@@ -144,3 +191,5 @@ console.log("iachoice" + iaChoice);
         afficherPartieFinie();
       }
 } // lance un tour
+
+// fonction restart

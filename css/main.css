@@ -131,7 +131,11 @@ textarea {
 }
 
 .IApic {
-    margin-top: 20%;
+    margin-top: 8%;
+}
+
+.playerpic {
+    margin-top: 5%;
 }
 
 .treasurepic {
@@ -151,11 +155,32 @@ textarea {
     position: relative;
     top: -150px;
     left: 450px;
+    margin-top: 5%;
 }
 
+#won {
+    position: relative;
+    top: 150px;
+    left: 500px;
+}
 
+#lost {
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    left: 500px;
+}
 
+#won, #lost {
 
+    color: rgb(187, 3, 104);
+}
+
+#restart {
+    position: relative;
+    top: 250px;
+    left: 320px;
+}
 
 
 
