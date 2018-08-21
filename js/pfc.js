@@ -64,6 +64,7 @@ function playingPage() {
     document.getElementById("playingcards").style.display = "inline-block"
     document.getElementById("pictures").style.display = "inline";
     document.getElementById("picture").style.display = "inline";
+    
 }
 
 document.getElementById("enterName").onclick = function() {
@@ -193,3 +194,6 @@ function jouer(choix) {
 } // lance un tour
 
 // fonction restart
+function restart () {
+    location.reload();
+}
